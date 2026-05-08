@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jancoach – Physique Coaching</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#080808;--white:#f0f0f0;--gray:#141414;--gray2:#1e1e1e;--gray3:#666;
+  --purple:#7B5EA7;--purple2:#a07fd4;--purple-light:rgba(123,94,167,0.15);
+  --text:#ddd;--text2:#999;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(8,8,8,0.95);backdrop-filter:blur(16px);border-bottom:1px solid #1a1a1a}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 40px}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:3px;color:var(--white)}
+.logo-sub{font-size:8px;letter-spacing:3px;color:var(--purple2);text-transform:uppercase}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--white)}
+.nav-cta{background:var(--purple);color:#fff;padding:9px 22px;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:2px;font-weight:600;transition:background .2s}
+.nav-cta:hover{background:var(--purple2)}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-left{display:flex;flex-direction:column;justify-content:center;padding:120px 60px 80px 80px;position:relative;z-index:2}
+.hero-right{position:relative;overflow:hidden}
+.hero-right img{width:100%;height:100%;object-fit:cover;object-position:top center}
+.hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,var(--black) 0%,transparent 40%)}
+.hero-right::before{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--black) 0%,transparent 30%);z-index:1}
+.hero-glow{position:absolute;top:30%;left:0;width:500px;height:500px;background:radial-gradient(circle,rgba(123,94,167,0.12) 0%,transparent 70%);z-index:1;pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(123,94,167,0.12);border:1px solid rgba(123,94,167,0.25);padding:6px 14px;border-radius:100px;font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--purple2);margin-bottom:20px;width:fit-content}
+.dot{width:5px;height:5px;background:var(--purple2);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+h1{font-family:'Bebas Neue',sans-serif;font-size:80px;line-height:.95;letter-spacing:1px;color:var(--white);margin-bottom:16px}
+h1 .accent{color:var(--purple2)}
+.tagline{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gray3);margin-bottom:20px;border-left:2px solid var(--purple);padding-left:12px}
+.hero-desc{font-size:15px;color:var(--text2);line-height:1.85;margin-bottom:36px;max-width:420px}
+.hero-btns{display:flex;gap:14px}
+.btn-p{background:var(--purple);color:#fff;padding:13px 30px;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:2px;font-weight:700;transition:all .2s;border:none;cursor:pointer;font-family:'Inter',sans-serif}
+.btn-p:hover{background:var(--purple2);transform:translateY(-1px)}
+.btn-o{background:transparent;color:var(--white);padding:13px 30px;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:2px;font-weight:600;border:1px solid #333;transition:all .2s;cursor:pointer;font-family:'Inter',sans-serif}
+.btn-o:hover{border-color:var(--purple2);color:var(--purple2)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:48px;padding-top:40px;border-top:1px solid #1e1e1e}
+.stat{padding-right:24px;border-right:1px solid #1e1e1e}
+.stat:last-child{border-right:none;padding-right:0}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--white);line-height:1}
+.stat-n span{color:var(--purple2)}
+.stat-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gray3);margin-top:2px}
+
+section{padding:100px 40px}
+.si{max-width:1200px;margin:0 auto}
+.sl{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--purple2);margin-bottom:10px}
+.st{font-family:'Bebas Neue',sans-serif;font-size:54px;color:var(--white);line-height:1;margin-bottom:16px}
+.sdiv{width:40px;height:2px;background:var(--purple);margin-bottom:20px}
+.ss{font-size:15px;color:var(--text2);max-width:540px;line-height:1.8}
+
+/* ABOUT */
+.about-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start;margin-top:64px}
+.about-photos{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.ap-main{grid-column:1/-1;border-radius:4px;overflow:hidden}
+.ap-main img{width:100%;height:320px;object-fit:cover;object-position:center 20%;display:block}
+.ap-sm{border-radius:4px;overflow:hidden}
+.ap-sm img{width:100%;height:200px;object-fit:cover;object-position:center 10%;display:block}
+.about-name{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--white);letter-spacing:1px;margin-bottom:4px}
+.about-role{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--purple2);margin-bottom:24px}
+.about-bio{font-size:14px;color:var(--text2);line-height:1.9;margin-bottom:20px}
+.certs{display:flex;flex-direction:column;gap:10px;margin-bottom:28px}
+.cert{display:flex;align-items:center;gap:12px;padding:11px 16px;background:#111;border:1px solid #1e1e1e;border-radius:3px}
+.cdot{width:6px;height:6px;background:var(--purple);border-radius:50%;flex-shrink:0}
+.ct{font-size:13px;color:var(--text2)}
+.cy{font-size:10px;color:var(--gray3);margin-left:auto;letter-spacing:1px;text-transform:uppercase}
+.exp-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.exp-box{background:#0f0f0f;border:1px solid #1a1a1a;border-radius:4px;padding:16px;text-align:center}
+.exp-n{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--purple2)}
+.exp-l{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gray3);line-height:1.4;margin-top:2px}
+
+/* SERVICES */
+.svc-bg{background:#0b0b0b}
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#1a1a1a;border-radius:4px;overflow:hidden;margin-top:60px}
+.svc{background:#0f0f0f;padding:44px 40px;position:relative;overflow:hidden;transition:background .3s}
+.svc:hover{background:#131313}
+.svc::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--purple);transform:scaleX(0);transition:transform .3s;transform-origin:left}
+.svc:hover::after{transform:scaleX(1)}
+.svc-n{font-family:'Bebas Neue',sans-serif;font-size:90px;color:#161616;position:absolute;right:24px;top:16px;line-height:1;pointer-events:none}
+.svc-icon{font-size:28px;margin-bottom:20px}
+.svc-name{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);letter-spacing:1px;margin-bottom:10px}
+.svc-desc{font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:20px}
+.svc-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--purple2);border:1px solid rgba(123,94,167,0.25);padding:4px 12px;border-radius:100px;display:inline-block}
+
+/* TRANSFORMATIONS */
+.trans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:60px}
+.tc{border-radius:4px;overflow:hidden;background:#0f0f0f;border:1px solid #1a1a1a}
+.tc img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
+.tc-info{padding:14px 16px}
+.tc-type{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--purple2);margin-bottom:4px}
+.tc-result{font-size:13px;color:var(--text);font-weight:500}
+
+/* PACKAGES */
+.pkg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:60px}
+.pkg{background:#0f0f0f;border:1px solid #1e1e1e;border-radius:4px;padding:28px 20px;position:relative;transition:border-color .3s}
+.pkg:hover{border-color:#333}
+.pkg.hot{border-color:var(--purple);background:#110e18}
+.pkg-badge{position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;border-radius:0 0 4px 4px;white-space:nowrap}
+.pkg-d{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--white);line-height:1}
+.pkg-u{font-size:12px;color:var(--gray3);margin-bottom:14px}
+.pkg-sep{height:1px;background:#1e1e1e;margin:14px 0}
+.pkg-feat{list-style:none;display:flex;flex-direction:column;gap:9px}
+.pkg-feat li{font-size:12px;color:var(--text2);display:flex;align-items:flex-start;gap:8px;line-height:1.4}
+.pkg-feat li::before{content:'✓';color:var(--purple2);font-weight:700;flex-shrink:0;margin-top:1px}
+.pkg-btn{display:block;text-align:center;margin-top:20px;padding:11px;border:1px solid #2a2a2a;color:var(--text2);background:none;border-radius:2px;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .2s;width:100%;font-family:'Inter',sans-serif}
+.pkg-btn:hover,.pkg.hot .pkg-btn{background:var(--purple);color:#fff;border-color:var(--purple)}
+
+/* CONTACT */
+.contact-bg{background:#0b0b0b}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;margin-top:60px;align-items:start}
+.fg{margin-bottom:18px}
+.fg label{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gray3);margin-bottom:7px}
+.fg input,.fg select,.fg textarea{width:100%;background:#111;border:1px solid #222;color:var(--text);padding:13px 15px;font-size:13px;font-family:'Inter',sans-serif;border-radius:2px;outline:none;transition:border-color .2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--purple)}
+.fg select option{background:#111}
+.fg textarea{min-height:110px;resize:vertical}
+.info-cards{display:flex;flex-direction:column;gap:12px}
+.ic{display:flex;align-items:center;gap:16px;padding:18px;background:#111;border:1px solid #1a1a1a;border-radius:4px}
+.ic-icon{width:38px;height:38px;background:rgba(123,94,167,0.1);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.ic-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gray3)}
+.ic-val{font-size:13px;color:var(--text);margin-top:2px}
+.cta-box{background:linear-gradient(135deg,#110e18,#0f0f0f);border:1px solid rgba(123,94,167,0.2);border-radius:4px;padding:28px;margin-top:12px}
+.cta-box-title{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--white);letter-spacing:1px;margin-bottom:8px}
+.cta-box-sub{font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:16px}
+
+/* PROCESS */
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;border:1px solid #1a1a1a;border-radius:4px;overflow:hidden}
+.proc{padding:36px 28px;background:#0f0f0f;border-right:1px solid #1a1a1a}
+.proc:last-child{border-right:none}
+.proc-n{font-family:'Bebas Neue',sans-serif;font-size:64px;color:#161616;line-height:1;margin-bottom:12px}
+.proc-title{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--white);letter-spacing:1px;margin-bottom:8px}
+.proc-desc{font-size:12px;color:var(--text2);line-height:1.7}
+
+footer{background:#040404;border-top:1px solid #111;padding:48px 40px;text-align:center}
+.fl{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:4px;color:var(--white);margin-bottom:6px}
+.fs{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gray3);margin-bottom:24px}
+.flinks{display:flex;justify-content:center;gap:24px;margin-bottom:24px}
+.flinks a{color:var(--gray3);font-size:11px;letter-spacing:1px;text-decoration:none;text-transform:uppercase;transition:color .2s}
+.flinks a:hover{color:var(--purple2)}
+.fcopy{font-size:11px;color:#2a2a2a}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.v{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <svg width="32" height="32" viewBox="0 0 100 120" fill="none">
+        <path d="M50 4L87 20L92 58C92 84 72 108 50 118C28 108 8 84 8 58L13 20Z" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="1"/>
+        <path d="M42 28L60 28C65 28 67 33 65 38L53 60L65 60C70 60 70 67 65 72L42 72C37 72 35 67 37 62L49 40L37 40C32 40 32 33 37 28Z" fill="#7B5EA7"/>
+      </svg>
+      <div>
+        <div class="logo-text">JANCOACH</div>
+        <div class="logo-sub">Physique Coaching</div>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#results">Results</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Apply Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-left">
+    <div class="hero-badge"><div class="dot"></div>Online Physique Coaching · HCM City</div>
+    <h1>FROM<br>LIFESTYLE<br>TO <span class="accent">STAGE</span></h1>
+    <p class="tagline">Build Your Physique With Structure</p>
+    <p class="hero-desc">Coaching dựa trên khoa học và kinh nghiệm thực chiến. Không có giáo án copy-paste — chỉ có lộ trình được cá nhân hoá cho đúng một mình bạn.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-p">Apply Now</a>
+      <a href="#results" class="btn-o">View Results</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-n">100<span>+</span></div><div class="stat-l">Clients Coached</div></div>
+      <div class="stat" style="padding-left:24px"><div class="stat-n">6<span>+</span></div><div class="stat-l">Years Experience</div></div>
+      <div class="stat" style="padding-left:24px"><div class="stat-n">Top<span>3</span></div><div class="stat-l">Stage Athletes</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <!-- ĐỔI src bên dưới thành đường dẫn ảnh của bạn -->
+    <img src="images/hero-jan.jpg" alt="Jan Coach">
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="si">
+    <div class="reveal">
+      <div class="sl">The Coach</div>
+      <div class="st">VÕ QUỐC AN <span style="color:var(--purple2)">— JAN</span></div>
+      <div class="sdiv"></div>
+      <p class="ss">Physique Coach với hơn 6 năm kinh nghiệm. Chuyên về Contest Prep, Physique Transformation và Lifestyle Coaching. Đồng hành cùng 100+ clients và đào tạo vận động viên đạt Top 3 thi đấu.</p>
+    </div>
+    <div class="about-wrap">
+      <div class="about-photos reveal">
+        <div class="ap-main">
+          <!-- ĐỔI src thành ảnh gym của bạn -->
+          <img src="images/jan-action-1.jpg" alt="Jan training">
+        </div>
+        <div class="ap-sm">
+          <img src="images/jan-action-2.jpg" alt="Jan coaching">
+        </div>
+        <div class="ap-sm">
+          <img src="images/jan-action-3.jpg" alt="Jan gym">
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="about-name">JAN — VÕ QUỐC AN</div>
+        <div class="about-role">Physique Coach · Contest Prep Specialist</div>
+        <p class="about-bio">Tôi bắt đầu coaching từ năm 2020 với niềm tin đơn giản: mỗi người xứng đáng được có một lộ trình riêng, được xây dựng dựa trên dữ liệu thực tế chứ không phải những công thức chung chung.</p>
+        <p class="about-bio">Từ lifestyle đến sân khấu thi đấu — tôi đồng hành cùng bạn trong từng giai đoạn, giúp bạn hiểu rõ cơ thể và xây dựng physique bền vững, có hệ thống.</p>
+        <div class="certs">
+          <div class="cert"><div class="cdot"></div><div class="ct">J3 University</div><div class="cy">Certified</div></div>
+          <div class="cert"><div class="cdot"></div><div class="ct">Clean Health Fitness Institute</div><div class="cy">Certified</div></div>
+          <div class="cert"><div class="cdot"></div><div class="ct">N1 Education</div><div class="cy">Certified</div></div>
+          <div class="cert"><div class="cdot"></div><div class="ct">Applied Nutrition Lv1 — NCCI</div><div class="cy">Certified</div></div>
+        </div>
+        <div class="exp-row">
+          <div class="exp-box"><div class="exp-n">100+</div><div class="exp-l">Clients Coached</div></div>
+          <div class="exp-box"><div class="exp-n" style="color:var(--white)">2020</div><div class="exp-l">Started Coaching</div></div>
+          <div class="exp-box"><div class="exp-n">Top3</div><div class="exp-l">Stage Athletes</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="svc-bg">
+  <div class="si">
+    <div class="reveal">
+      <div class="sl">What I Offer</div>
+      <div class="st">COACHING <span style="color:var(--purple2)">SERVICES</span></div>
+      <div class="sdiv"></div>
+    </div>
+    <div class="svc-grid reveal">
+      <div class="svc"><div class="svc-n">01</div><div class="svc-icon">🏆</div><div class="svc-name">Contest Prep Coaching</div><p class="svc-desc">Dành cho vận động viên nghiêm túc muốn bước lên sân khấu. Lộ trình từ off-season đến peak week — tối ưu hoá từng tuần để bạn đạt đỉnh phong độ đúng ngày thi đấu.</p><span class="svc-tag">For Competitors</span></div>
+      <div class="svc"><div class="svc-n">02</div><div class="svc-icon">⚡</div><div class="svc-name">Physique Coaching</div><p class="svc-desc">Xây dựng cơ thể cân đối, mạnh mẽ và có định hướng rõ ràng. Không chỉ bảo bạn làm gì — mà còn giải thích tại sao, để bạn hiểu và tự làm chủ quá trình.</p><span class="svc-tag">Lifestyle · Transformation</span></div>
+      <div class="svc"><div class="svc-n">03</div><div class="svc-icon">📊</div><div class="svc-name">Online Coaching</div><p class="svc-desc">Coaching trực tuyến linh hoạt theo lịch của bạn. Check-in hàng tuần, điều chỉnh theo dữ liệu thực tế và support 24/7 xuyên suốt hành trình.</p><span class="svc-tag">Remote · Flexible</span></div>
+      <div class="svc"><div class="svc-n">04</div><div class="svc-icon">🎯</div><div class="svc-name">Peak Week Protocol</div><p class="svc-desc">Chuyên sâu về Peak Week — giai đoạn quyết định kết quả thi đấu. Carb loading, water manipulation và stage strategy tối ưu theo từng cá nhân.</p><span class="svc-tag">Elite · Pre-Competition</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section style="background:#080808;padding:80px 40px">
+  <div class="si">
+    <div class="reveal">
+      <div class="sl">How It Works</div>
+      <div class="st">THE <span style="color:var(--purple2)">PROCESS</span></div>
+      <div class="sdiv"></div>
+    </div>
+    <div class="proc-grid reveal">
+      <div class="proc"><div class="proc-n">01</div><div class="proc-title">Apply & Consult</div><p class="proc-desc">Điền form đăng ký. Tôi đánh giá mục tiêu và lịch sử tập luyện để chọn gói phù hợp nhất.</p></div>
+      <div class="proc"><div class="proc-n">02</div><div class="proc-title">Onboarding</div><p class="proc-desc">Đánh giá toàn diện: thể trạng, lịch tập, dinh dưỡng hiện tại và mục tiêu dài hạn.</p></div>
+      <div class="proc"><div class="proc-n">03</div><div class="proc-title">Execute & Adjust</div><p class="proc-desc">Check-in hàng tuần, điều chỉnh theo dữ liệu thực tế. Không đoán mò — tất cả dựa trên số liệu.</p></div>
+      <div class="proc"><div class="proc-n">04</div><div class="proc-title">Results</div><p class="proc-desc">Kết quả thực tế, bền vững. Bạn hiểu tại sao — để tự làm chủ cơ thể lâu dài.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMATIONS -->
+<section id="results" style="background:#0b0b0b;padding:100px 40px">
+  <div class="si">
+    <div class="reveal">
+      <div class="sl">Client Results</div>
+      <div class="st">REAL TRANS-<span style="color:var(--purple2)">FORMATIONS</span></div>
+      <div class="sdiv"></div>
+      <p class="ss">Kết quả thực tế từ những clients của TeamJan. Không filter, không chỉnh sửa — chỉ có công việc và phương pháp đúng.</p>
+    </div>
+    <div class="trans-grid reveal">
+      <!-- ĐỔI src thành ảnh transformation thật -->
+      <div class="tc"><img src="images/trans-1.jpg" alt="Transformation 1"><div class="tc-info"><div class="tc-type">Physique Coaching</div><div class="tc-result">Female · Fat Loss + Tone</div></div></div>
+      <div class="tc"><img src="images/trans-2.jpg" alt="Transformation 2"><div class="tc-info"><div class="tc-type">Online Coaching</div><div class="tc-result">Male · Body Recomposition</div></div></div>
+      <div class="tc"><img src="images/trans-3.jpg" alt="Transformation 3"><div class="tc-info"><div class="tc-type">Physique Coaching</div><div class="tc-result">Female · Post-pregnancy Recomp</div></div></div>
+      <div class="tc"><img src="images/trans-4.jpg" alt="Transformation 4"><div class="tc-info"><div class="tc-type">Physique Coaching</div><div class="tc-result">Male · Lean Muscle Build</div></div></div>
+      <div class="tc"><img src="images/trans-5.jpg" alt="Transformation 5"><div class="tc-info"><div class="tc-type">Physique Coaching</div><div class="tc-result">Female · Glute & Body Shaping</div></div></div>
+      <div class="tc"><img src="images/trans-6.jpg" alt="Transformation 6"><div class="tc-info"><div class="tc-type">Contest Prep</div><div class="tc-result">Male · Stage Ready Physique</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section id="packages" style="padding:100px 40px">
+  <div class="si">
+    <div class="reveal">
+      <div class="sl">Investment</div>
+      <div class="st">COACHING <span style="color:var(--purple2)">PACKAGES</span></div>
+      <div class="sdiv"></div>
+      <p class="ss">Tất cả gói đều bao gồm coaching cá nhân hoá, kế hoạch dinh dưỡng và support liên tục.</p>
+    </div>
+    <div class="pkg-grid reveal">
+      <div class="pkg">
+        <div class="pkg-d">01</div><div class="pkg-u">Tháng</div>
+        <div class="pkg-sep"></div>
+        <ul class="pkg-feat">
+          <li>Giáo án cá nhân hoá</li>
+          <li>Kế hoạch dinh dưỡng</li>
+          <li>Check-in hàng tuần</li>
+          <li>Support qua app</li>
+        </ul>
+        <button class="pkg-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Apply Now</button>
+      </div>
+      <div class="pkg">
+        <div class="pkg-d">03</div><div class="pkg-u">Tháng</div>
+        <div class="pkg-sep"></div>
+        <ul class="pkg-feat">
+          <li>Tất cả gói 1 tháng</li>
+          <li>Điều chỉnh linh hoạt</li>
+          <li>Progress tracking</li>
+          <li>Video form review</li>
+        </ul>
+        <button class="pkg-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Apply Now</button>
+      </div>
+      <div class="pkg hot">
+        <div class="pkg-badge">Most Popular</div>
+        <div class="pkg-d">06</div><div class="pkg-u">Tháng</div>
+        <div class="pkg-sep"></div>
+        <ul class="pkg-feat">
+          <li>Tất cả gói 3 tháng</li>
+          <li>Peak week protocol</li>
+          <li>Supplement guidance</li>
+          <li>Priority support 24/7</li>
+          <li>Monthly 1-on-1 call</li>
+        </ul>
+        <button class="pkg-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Apply Now</button>
+      </div>
+      <div class="pkg">
+        <div class="pkg-d">12</div><div class="pkg-u">Tháng</div>
+        <div class="pkg-sep"></div>
+        <ul class="pkg-feat">
+          <li>Tất cả gói 6 tháng</li>
+          <li>Full season planning</li>
+          <li>Competition strategy</li>
+          <li>Exclusive community</li>
+          <li>Priority 1-on-1 sessions</li>
+        </ul>
+        <button class="pkg-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Apply Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-bg">
+  <div class="si">
+    <div class="reveal">
+      <div class="sl">Get Started</div>
+      <div class="st">APPLY <span style="color:var(--purple2)">NOW</span></div>
+      <div class="sdiv"></div>
+      <p class="ss">Điền form để đăng ký. Tôi sẽ liên hệ trong vòng 24h để đánh giá mục tiêu và xác nhận gói coaching phù hợp.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <div>
+        <div class="fg"><label>Họ và tên</label><input type="text" placeholder="Nguyễn Văn A"></div>
+        <div class="fg"><label>Email</label><input type="email" placeholder="email@example.com"></div>
+        <div class="fg"><label>Số điện thoại</label><input type="tel" placeholder="0901 234 567"></div>
+        <div class="fg"><label>Gói coaching</label>
+          <select>
+            <option>Chọn gói phù hợp...</option>
+            <option>1 Tháng</option>
+            <option>3 Tháng</option>
+            <option>6 Tháng (Most Popular)</option>
+            <option>12 Tháng</option>
+          </select>
+        </div>
+        <div class="fg"><label>Mục tiêu & kinh nghiệm tập luyện</label>
+          <textarea placeholder="Mô tả mục tiêu, kinh nghiệm tập hiện tại và bất kỳ thông tin nào bạn muốn Jan biết..."></textarea>
+        </div>
+        <button class="btn-p" style="width:100%;border:none">Gửi Đơn Đăng Ký →</button>
+      </div>
+      <div class="info-cards">
+        <div class="ic"><div class="ic-icon">📱</div><div><div class="ic-label">Facebook</div><div class="ic-val">fb.com/vo.quoc.an.121982</div></div></div>
+        <div class="ic"><div class="ic-icon">📸</div><div><div class="ic-label">Instagram</div><div class="ic-val">@janvo_an</div></div></div>
+        <div class="ic"><div class="ic-icon">⏱</div><div><div class="ic-label">Thời gian phản hồi</div><div class="ic-val">Trong vòng 24 giờ</div></div></div>
+        <div class="ic"><div class="ic-icon">📍</div><div><div class="ic-label">Location</div><div class="ic-val">Ho Chi Minh City · Online Worldwide</div></div></div>
+        <div class="cta-box">
+          <div class="cta-box-title">CHƯA CHẮC GÓI NÀO PHÙ HỢP?</div>
+          <p class="cta-box-sub">Nhắn tin trực tiếp qua Messenger hoặc Instagram để được tư vấn miễn phí — không cam kết, không áp lực.</p>
+          <a href="https://www.facebook.com/vo.quoc.an.121982" target="_blank" class="btn-o" style="display:inline-block;font-size:10px;padding:10px 20px">Nhắn Tin Ngay</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fl">JANCOACH</div>
+  <div class="fs">Physique Coaching · From Lifestyle To Stage</div>
+  <div class="flinks">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#packages">Packages</a>
+    <a href="#results">Results</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="fcopy">© 2025 Jancoach · Võ Quốc An. All rights reserved.</div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target)}})
+},{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
