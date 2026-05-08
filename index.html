@@ -14,7 +14,6 @@
 }
 html{scroll-behavior:smooth}
 body{background:var(--black);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
-
 nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(8,8,8,0.95);backdrop-filter:blur(16px);border-bottom:1px solid #1a1a1a}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 40px}
 .nav-logo{display:flex;align-items:center;gap:10px}
@@ -25,8 +24,6 @@ nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(8,8,8,0.95);back
 .nav-links a:hover{color:var(--white)}
 .nav-cta{background:var(--purple);color:#fff;padding:9px 22px;font-size:11px;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border-radius:2px;font-weight:600;transition:background .2s}
 .nav-cta:hover{background:var(--purple2)}
-
-/* HERO */
 .hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
 .hero-left{display:flex;flex-direction:column;justify-content:center;padding:120px 60px 80px 80px;position:relative;z-index:2}
 .hero-right{position:relative;overflow:hidden}
@@ -52,15 +49,12 @@ h1 .accent{color:var(--purple2)}
 .stat-n{font-family:'Bebas Neue',sans-serif;font-size:44px;color:var(--white);line-height:1}
 .stat-n span{color:var(--purple2)}
 .stat-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gray3);margin-top:2px}
-
 section{padding:100px 40px}
 .si{max-width:1200px;margin:0 auto}
 .sl{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--purple2);margin-bottom:10px}
 .st{font-family:'Bebas Neue',sans-serif;font-size:54px;color:var(--white);line-height:1;margin-bottom:16px}
 .sdiv{width:40px;height:2px;background:var(--purple);margin-bottom:20px}
 .ss{font-size:15px;color:var(--text2);max-width:540px;line-height:1.8}
-
-/* ABOUT */
 .about-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:72px;align-items:start;margin-top:64px}
 .about-photos{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .ap-main{grid-column:1/-1;border-radius:4px;overflow:hidden}
@@ -79,8 +73,6 @@ section{padding:100px 40px}
 .exp-box{background:#0f0f0f;border:1px solid #1a1a1a;border-radius:4px;padding:16px;text-align:center}
 .exp-n{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--purple2)}
 .exp-l{font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gray3);line-height:1.4;margin-top:2px}
-
-/* SERVICES */
 .svc-bg{background:#0b0b0b}
 .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#1a1a1a;border-radius:4px;overflow:hidden;margin-top:60px}
 .svc{background:#0f0f0f;padding:44px 40px;position:relative;overflow:hidden;transition:background .3s}
@@ -92,16 +84,12 @@ section{padding:100px 40px}
 .svc-name{font-family:'Bebas Neue',sans-serif;font-size:26px;color:var(--white);letter-spacing:1px;margin-bottom:10px}
 .svc-desc{font-size:13px;color:var(--text2);line-height:1.8;margin-bottom:20px}
 .svc-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--purple2);border:1px solid rgba(123,94,167,0.25);padding:4px 12px;border-radius:100px;display:inline-block}
-
-/* TRANSFORMATIONS */
 .trans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:60px}
 .tc{border-radius:4px;overflow:hidden;background:#0f0f0f;border:1px solid #1a1a1a}
 .tc img{width:100%;display:block;aspect-ratio:4/3;object-fit:cover}
 .tc-info{padding:14px 16px}
 .tc-type{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--purple2);margin-bottom:4px}
 .tc-result{font-size:13px;color:var(--text);font-weight:500}
-
-/* PACKAGES */
 .pkg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:60px}
 .pkg{background:#0f0f0f;border:1px solid #1e1e1e;border-radius:4px;padding:28px 20px;position:relative;transition:border-color .3s}
 .pkg:hover{border-color:#333}
@@ -115,8 +103,6 @@ section{padding:100px 40px}
 .pkg-feat li::before{content:'✓';color:var(--purple2);font-weight:700;flex-shrink:0;margin-top:1px}
 .pkg-btn{display:block;text-align:center;margin-top:20px;padding:11px;border:1px solid #2a2a2a;color:var(--text2);background:none;border-radius:2px;font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .2s;width:100%;font-family:'Inter',sans-serif}
 .pkg-btn:hover,.pkg.hot .pkg-btn{background:var(--purple);color:#fff;border-color:var(--purple)}
-
-/* CONTACT */
 .contact-bg{background:#0b0b0b}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;margin-top:60px;align-items:start}
 .fg{margin-bottom:18px}
@@ -133,15 +119,12 @@ section{padding:100px 40px}
 .cta-box{background:linear-gradient(135deg,#110e18,#0f0f0f);border:1px solid rgba(123,94,167,0.2);border-radius:4px;padding:28px;margin-top:12px}
 .cta-box-title{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--white);letter-spacing:1px;margin-bottom:8px}
 .cta-box-sub{font-size:13px;color:var(--text2);line-height:1.7;margin-bottom:16px}
-
-/* PROCESS */
 .proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;border:1px solid #1a1a1a;border-radius:4px;overflow:hidden}
 .proc{padding:36px 28px;background:#0f0f0f;border-right:1px solid #1a1a1a}
 .proc:last-child{border-right:none}
 .proc-n{font-family:'Bebas Neue',sans-serif;font-size:64px;color:#161616;line-height:1;margin-bottom:12px}
 .proc-title{font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--white);letter-spacing:1px;margin-bottom:8px}
 .proc-desc{font-size:12px;color:var(--text2);line-height:1.7}
-
 footer{background:#040404;border-top:1px solid #111;padding:48px 40px;text-align:center}
 .fl{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:4px;color:var(--white);margin-bottom:6px}
 .fs{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gray3);margin-bottom:24px}
@@ -149,14 +132,12 @@ footer{background:#040404;border-top:1px solid #111;padding:48px 40px;text-align
 .flinks a{color:var(--gray3);font-size:11px;letter-spacing:1px;text-decoration:none;text-transform:uppercase;transition:color .2s}
 .flinks a:hover{color:var(--purple2)}
 .fcopy{font-size:11px;color:#2a2a2a}
-
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .reveal.v{opacity:1;transform:none}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <div class="nav-logo">
@@ -198,8 +179,7 @@ footer{background:#040404;border-top:1px solid #111;padding:48px 40px;text-align
     </div>
   </div>
   <div class="hero-right">
-    <!-- ĐỔI src bên dưới thành đường dẫn ảnh của bạn -->
-    <img src="images/hero-jan.jpg" alt="Jan Coach">
+    <img src="images/DSC08728.JPG" alt="Jan Coach">
   </div>
 </div>
 
@@ -215,14 +195,13 @@ footer{background:#040404;border-top:1px solid #111;padding:48px 40px;text-align
     <div class="about-wrap">
       <div class="about-photos reveal">
         <div class="ap-main">
-          <!-- ĐỔI src thành ảnh gym của bạn -->
-          <img src="images/jan-action-1.jpg" alt="Jan training">
+          <img src="images/DSC07579.JPG" alt="Jan training">
         </div>
         <div class="ap-sm">
-          <img src="images/jan-action-2.jpg" alt="Jan coaching">
+          <img src="images/DSC08369.JPG" alt="Jan coaching">
         </div>
         <div class="ap-sm">
-          <img src="images/jan-action-3.jpg" alt="Jan gym">
+          <img src="images/IMG_8925.JPG" alt="Jan gym">
         </div>
       </div>
       <div class="reveal">
@@ -290,13 +269,12 @@ footer{background:#040404;border-top:1px solid #111;padding:48px 40px;text-align
       <p class="ss">Kết quả thực tế từ những clients của TeamJan. Không filter, không chỉnh sửa — chỉ có công việc và phương pháp đúng.</p>
     </div>
     <div class="trans-grid reveal">
-      <!-- ĐỔI src thành ảnh transformation thật -->
-      <div class="tc"><img src="images/trans-1.jpg" alt="Transformation 1"><div class="tc-info"><div class="tc-type">Physique Coaching</div><div class="tc-result">Female · Fat Loss + Tone</div></div></div>
-      <div class="tc"><img src="images/trans-2.jpg" alt="Transformation 2"><div class="tc-info"><div class="tc-type">Online Coaching</div><div class="tc-result">Male · Body Recomposition</div></div></div>
-      <div class="tc"><img src="images/trans-3.jpg" alt="Transformation 3"><div class="tc-info"><div class="tc-type">Physique Coaching</div><div class="tc-result">Female · Post-pregnancy Recomp</div></div></div>
-      <div class="tc"><img src="images/trans-4.jpg" alt="Transformation 4"><div class="tc-info"><div class="tc-type">Physique Coaching</div><div class="tc-result">Male · Lean Muscle Build</div></div></div>
-      <div class="tc"><img src="images/trans-5.jpg" alt="Transformation 5"><div class="tc-info"><div class="tc-type">Physique Coaching</div><div class="tc-result">Female · Glute & Body Shaping</div></div></div>
-      <div class="tc"><img src="images/trans-6.jpg" alt="Transformation 6"><div class="tc-info"><div class="tc-type">Contest Prep</div><div class="tc-result">Male · Stage Ready Physique</div></div></div>
+      <div class="tc"><img src="images/IMG_1583.JPG" alt="Transformation 1"><div class="tc-info"><div class="tc-type">Physique Coaching</div><div class="tc-result">Female · Fat Loss + Tone</div></div></div>
+      <div class="tc"><img src="images/IMG_1584.JPG" alt="Transformation 2"><div class="tc-info"><div class="tc-type">Online Coaching</div><div class="tc-result">Male · Body Recomposition</div></div></div>
+      <div class="tc"><img src="images/IMG_1585.JPG" alt="Transformation 3"><div class="tc-info"><div class="tc-type">Physique Coaching</div><div class="tc-result">Female · Post-pregnancy Recomp</div></div></div>
+      <div class="tc"><img src="images/IMG_1586.JPG" alt="Transformation 4"><div class="tc-info"><div class="tc-type">Physique Coaching</div><div class="tc-result">Male · Lean Muscle Build</div></div></div>
+      <div class="tc"><img src="images/IMG_1589.JPG" alt="Transformation 5"><div class="tc-info"><div class="tc-type">Physique Coaching</div><div class="tc-result">Female · Glute & Body Shaping</div></div></div>
+      <div class="tc"><img src="images/IMG_1592.jpg" alt="Transformation 6"><div class="tc-info"><div class="tc-type">Contest Prep</div><div class="tc-result">Male · Stage Ready Physique</div></div></div>
     </div>
   </div>
 </section>
@@ -405,7 +383,6 @@ footer{background:#040404;border-top:1px solid #111;padding:48px 40px;text-align
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="fl">JANCOACH</div>
   <div class="fs">Physique Coaching · From Lifestyle To Stage</div>
